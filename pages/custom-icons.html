@@ -43,12 +43,12 @@
   }
 }
 .oxd-icons{
-  width: 100px;
-  height: 100px;
-  fill: #64728c; /* Default icon color */
-  color: #64728c; /* Default icon color */
-  stroke: #64728c; /* Default icon color */
-  fill: #64728c; /* Default icon color */
+  width: 54px;
+  height:54px;
+  fill: red;
+  color: red;
+    stroke: red;
+  fill: red;
 
     /* Make sure you define dimensions for your div otherwise it wont show u*/
     mask-size: contain;
@@ -59,113 +59,7 @@
 
 .icon-card
 {
-  height: 180px; /* Increased height to accommodate larger icon and overlay */
-  padding: 10px; /* Adjust padding as needed */
-  position: relative; /* Needed for absolute positioning of overlay */
-  overflow: hidden; /* Hide overflow content */
-  display: flex; /* Use flexbox for content alignment */
-  flex-direction: column; /* Stack content vertically */
-  justify-content: space-between; /* Space out content and title */
-  align-items: center; /* Center content horizontally */
-}
-
-.icon-actions {
-  display: flex;
-  gap: 5px;
-  /* No opacity/visibility needed here, controlled by parent .icon-overlay */
-}
-
-.icon-actions button,
-.icon-actions a {
-  font-size: 10px;
-  padding: 4px 8px;
-  border-radius: 4px;
-  text-decoration: none;
-  border: 1px solid #e8eaef;
-  background-color: #f1f2f5;
-  color: #64728c;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.icon-actions button:hover,
-.icon-actions a:hover {
-  background-color: #ff7b1d;
-  color: #fff;
-  border-color: #ff7b1d;
-}
-
-.icon-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%; /* Take full height of the card */
-}
-
-.icon-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-.icon-card:hover .icon-actions {
-  opacity: 1;
-  visibility: visible;
-}
-
-.icon-card:hover .icon-overlay {
-  opacity: 1;
-  visibility: visible;
-}
-
-.download-feedback {
-  position: absolute;
-  background: #76bc21;
-  color: white;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-size: 10px;
-  top: -25px;
-  left: 50%;
-  transform: translateX(-50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.download-feedback.show {
-  opacity: 1;
-}
-
-.icon-card p { /* For the icon title */
-  font-size: 12px;
-  font-weight: 600;
-  color: #64728c;
-  text-align: center;
-  margin: 12px 0px !important;
-  
-  overflow: hidden; /* Hide overflow */
-  text-overflow: ellipsis; /* Add ellipsis for truncation */
-  width: 100%; /* Ensure it takes full width for ellipsis */
-  margin-top: 5px; /* Space between icon and title */
-  
-  line-height: normal;
-}
-
-.col-custom-5 {
-  flex: 0 0 20%;
-  max-width: 20%;
-  padding: 5px; /* Adjust padding to match existing .np class */
+  padding-left: 36px;
 }
 
 
@@ -173,19 +67,6 @@
 </head>
 
 <body ><!-- onload="myFunction()" -->
-<!-- <div style="width: 100%; height:100%; z-index: 100000; position: absolute; width: 100%; height: 100%; background-color: #fff; margin-top: -60px;" id="loader">
-  
-        <div style="width: 80px; height: 100px; top:50%; left:50%; position: absolute;transform: translate(-50%, -50%); ">
-       <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 600 600">
-
-        <path class=" path" stroke="#64728c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="1000" stroke-dashoffset="1000" fill="none" d="M122.44,95.63c3.45-1.3,6.55-2.13,9.62-3,7-2.11,14-1.85,21.09-.32A68.39,68.39,0,0,1,180.72,105c8.7,6.69,14.34,15.5,17.58,25.9,6.42,20.66,1.91,45.49-12.25,62-13.32,15.53-30,24.87-50.4,27.47-17.57,2.23-34-1.37-49.53-9.71A77.26,77.26,0,0,1,58,185.26c-6.49-9.71-10.75-20.28-11.83-31.95-1.49-16.2,3.41-30.32,14.22-42.42a50.59,50.59,0,0,1,11.72-9.76,33.34,33.34,0,0,1,24.76-4.26c9.15,1.9,17.61,5.26,25,11.09,5.38,4.26,9.53,9.44,11.4,16.19a25.74,25.74,0,0,1,.6,2.74c.08.49.29,1.15-.45,1.36s-1.45.47-2-.26c-.46-.57-.89-1.18-1.37-1.73a47.88,47.88,0,0,0-31.31-16.48,33.48,33.48,0,0,0-9.22.21,19.68,19.68,0,0,0-11.07,5.78c-8.47,8.54-13.27,18.69-12.49,30.92.55,8.54,3.88,16.15,9,22.93a61.05,61.05,0,0,0,32.93,22.27c16.69,4.74,33,3.55,48.52-4.37,8-4.07,14.69-9.62,19.19-17.55a52.05,52.05,0,0,0,6.29-19,60.53,60.53,0,0,0,.11-15.45A31.11,31.11,0,0,0,175,119.89a55.3,55.3,0,0,0-22.77-16.79c-7.29-3-15-4.68-22.69-6.11C127.34,96.58,125.12,96.15,122.44,95.63Z" transform="translate(-45.89 -34.52)"/>
-
-        <path class=" path" stroke="#64728c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="1000" stroke-dashoffset="1000" fill="none"  d="M168,46.51A227,227,0,0,0,139,61.24a140.77,140.77,0,0,0-20.05,14.15c-1.26,1.09-2.49,2.21-3.94,3.5a15.68,15.68,0,0,1,0-4.27,51.28,51.28,0,0,1,4.33-17.69,29.4,29.4,0,0,1,16.48-15.68,97.77,97.77,0,0,1,25.57-6,132.65,132.65,0,0,1,18.9-.64,75.37,75.37,0,0,1,10.33.88,1,1,0,0,1,0,1c-5.79,12-12,23.72-20,34.42-1,1.29-2,2.53-3,3.77A25.9,25.9,0,0,1,155.19,83a116.28,116.28,0,0,1-19.84,4.25c-3.18.42-6.38.77-9.58,1.16a4,4,0,0,1-1.68,0A5.86,5.86,0,0,1,125.27,86c4-6.59,9.27-12.15,14.92-17.35,8.27-7.62,17.4-14.13,26.67-20.44.55-.38,1.09-.78,1.64-1.18a1.7,1.7,0,0,0,1.28-1.2A2.29,2.29,0,0,0,168,46.51Z" transform="translate(-45.89 -34.52)"/>
-
-
-</svg>
-<a>Loading</a>
-</div> -->
 
 </div>
 <div id="myDiv">
@@ -233,14 +114,14 @@
           <a href="#" class="list-group-item dropdown-btn">Visual Design</a>
               <div class="dropdown-container sub-item" style="display: block;">            
                 <a href="../design-catalog/color.html">Colors</a>
-                <a href="../design-catalog/typo.html">Typograpy</a>
+                <a href="../design-catalog/typo.html">Typography</a>
                 <a href="../design-catalog/images.html">Images</a>
                 <a href="custom-icons.html" class=" sub-item active">Icons</a>
                 <a href="../design-catalog/motion.html">Motion Animations</a>
               </div>
           
           <a href="#" class="list-group-item dropdown-btn" >Grid & Layouts</a>
-        <div class="dropdown-container sub-item active" >            
+          <div class="dropdown-container sub-item active" >            
                 <a href="../main-catalog/layout.html" class=" sub-item ">Main Layouts</a>
                 <a href="../main-catalog/grid.html" >Grid System</a>
               </div>
@@ -249,7 +130,6 @@
                 <a href="../main-catalog/side-bar.html"  >Sidebar</a>
                 <a href="../main-catalog/topbar.html">Topbar</a>
                 <a href="../main-catalog/stepper.html">Stepper</a>
-
               </div>
           <a href="../main-catalog/componets.html" class="list-group-item dropdown-btn">Components</a>
            <div class="dropdown-container sub-item ">            
@@ -290,8 +170,8 @@
           <a href="../main-catalog/advance-componets.html" class="list-group-item">Advance Components </a>
           <a href="../main-catalog/charts.html" class="list-group-item ">Charts</a>
           <hr>
-          <a href="qa.html" class="list-group-item active"><div class="img-icon"><img src="../img/behaviours.png"></div> UI Behaviours</a>
-          <a href="developer.html" class="list-group-item active"><div class="img-icon"><img src="../img/dev.png"></div> QA Standards</a>
+          <a href="../main-catalog/qa.html" class="list-group-item active"><div class="img-icon"><img src="../img/behaviours.png"></div> UI Behaviours</a>
+          <a href="../main-catalog/developer.html" class="list-group-item active"><div class="img-icon"><img src="../img/dev.png"></div> QA Standards</a>
       
          
       </div>
@@ -304,793 +184,645 @@
 
         <div class="my-4"></div>
         <div class="title-row">Module Icons</div><hr>
+        <!-- Module Icons Section -->
         <div class="row">
-          <div class="col-custom-5">
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/App Builder.svg" class="oxd-icons"></object>
-                <p>App Builder</p>
-              </div>
-              <div class="icon-overlay">
+               <img src="../img/Iconz/ModuleIcons/App Builder.svg" alt="oxd"/>
+               <p>App Builder</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/ModuleIcons/Attendance.svg" alt="oxd"/>
+               <p>Attendance</p>
+            </div>
+          </div> 
+           <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/ModuleIcons/Career Development.svg" alt="oxd"/>
+               <p>Career Development</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/ModuleIcons/Configurations.svg" alt="oxd"/>
+               <p>Configurations</p>
+            </div>
+          </div> 
+           <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/ModuleIcons/Employee Managem.svg" alt="oxd"/>
+               <p>Employee Management</p>
+            </div>
+          </div> 
+         <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/ModuleIcons/Goals.svg" alt="oxd"/>
+               <p>Goals</p>
+            </div>
+          </div> 
+       </div>
 
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/App Builder.svg" download="app-builder.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/App Builder.svg', 'app-builder', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-custom-5">
+       <div class="row my-3"></div>
+        <div class="row">
+           <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Attendance.svg" class="oxd-icons"></object>
-                <p>Attendance</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Attendance.svg" download="attendance.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Attendance.svg', 'attendance', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/ModuleIcons/Grievances.svg" alt="oxd"/>
+               <p>Grievances</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+           <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Career Development.svg" class="oxd-icons"></object>
-                <p>Career Development</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Career Development.svg" download="career-development.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Career Development.svg', 'career-development', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/ModuleIcons/HR Administration.svg" alt="oxd"/>
+               <p>HR Administration</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+           <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Configurations.svg" class="oxd-icons"></object>
-                <p>Configurations</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Configurations.svg" download="configurations.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Configurations.svg', 'configurations', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/ModuleIcons/Integrations.svg" alt="oxd"/>
+               <p>Integrations</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Employee Managem.svg" class="oxd-icons"></object>
-                <p>Employee Management</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Employee Managem.svg" download="employee-management.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Employee Managem.svg', 'employee-management', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/ModuleIcons/Leave.svg" alt="oxd"/>
+               <p>Leave</p>
             </div>
-          </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/ModuleIcons/Management Tools.svg" alt="oxd"/>
+               <p>Management Tools</p>
+            </div>
+          </div> 
+             <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/ModuleIcons/Onboarding.svg" alt="oxd"/>
+               <p>Onboarding</p>
+            </div>
+          </div> 
         </div>
 
         <div class="row my-3"></div>
         <div class="row">
-          <div class="col-custom-5">
+           <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Goals.svg" class="oxd-icons"></object>
-                <p>Goals</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Goals.svg" download="goals.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Goals.svg', 'goals', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/ModuleIcons/Performance.svg" alt="oxd"/>
+               <p>Performance</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+           <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Grievances.svg" class="oxd-icons"></object>
-                <p>Grievances</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Grievances.svg" download="grievances.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Grievances.svg', 'grievances', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/ModuleIcons/Recruitment (ATS).svg" alt="oxd"/>
+               <p>Recruitment (ATS)</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+           <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/HR Administration.svg" class="oxd-icons"></object>
-                <p>HR Administration</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/HR Administration.svg" download="hr-administration.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/HR Administration.svg', 'hr-administration', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/ModuleIcons/Reports and Analyti.svg" alt="oxd"/>
+               <p>Reports and Analytics</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Integrations.svg" class="oxd-icons"></object>
-                <p>Integrations</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Integrations.svg" download="integrations.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Integrations.svg', 'integrations', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/ModuleIcons/Request Desk.svg" alt="oxd"/>
+               <p>Request Desk</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Leave.svg" class="oxd-icons"></object>
-                <p>Leave</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Leave.svg" download="leave.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Leave.svg', 'leave', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/ModuleIcons/Roster.svg" alt="oxd"/>
+               <p>Roster</p>
             </div>
-          </div>
+          </div> 
+             <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/ModuleIcons/Surveys.svg" alt="oxd"/>
+               <p>Surveys</p>
+            </div>
+          </div> 
         </div>
 
         <div class="row my-3"></div>
         <div class="row">
-          <div class="col-custom-5">
+           <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Management Tools.svg" class="oxd-icons"></object>
-                <p>Management Tools</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Management Tools.svg" download="management-tools.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Management Tools.svg', 'management-tools', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/ModuleIcons/Time Tracking.svg" alt="oxd"/>
+               <p>Time Tracking</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+           <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Onboarding.svg" class="oxd-icons"></object>
-                <p>Onboarding</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Onboarding.svg" download="onboarding.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Onboarding.svg', 'onboarding', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/ModuleIcons/Training.svg" alt="oxd"/>
+               <p>Training</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+           <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Performance.svg" class="oxd-icons"></object>
-                <p>Performance</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Performance.svg" download="performance.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Performance.svg', 'performance', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/ModuleIcons/Travel and Expense.svg" alt="oxd"/>
+               <p>Travel and Expense</p>
             </div>
-          </div>
-          <div class="col-custom-5">
-            <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Recruitment (ATS).svg" class="oxd-icons"></object>
-                <p>Recruitment (ATS)</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Recruitment (ATS).svg" download="recruitment-ats.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Recruitment (ATS).svg', 'recruitment-ats', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-custom-5">
-            <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Reports and Analyti.svg" class="oxd-icons"></object>
-                <p>Reports & Analytics</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Reports and Analyti.svg" download="reports-analytics.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Reports and Analyti.svg', 'reports-analytics', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row my-3"></div>
-        <div class="row">
-          <div class="col-custom-5">
-            <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Request Desk.svg" class="oxd-icons"></object>
-                <p>Request Desk</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Request Desk.svg" download="request-desk.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Request Desk.svg', 'request-desk', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-custom-5">
-            <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Roster.svg" class="oxd-icons"></object>
-                <p>Roster</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Roster.svg" download="roster.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Roster.svg', 'roster', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-custom-5">
-            <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Surveys.svg" class="oxd-icons"></object>
-                <p>Surveys</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Surveys.svg" download="surveys.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Surveys.svg', 'surveys', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-custom-5">
-            <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Time Tracking.svg" class="oxd-icons"></object>
-                <p>Time Tracking</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Time Tracking.svg" download="time-tracking.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Time Tracking.svg', 'time-tracking', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-custom-5">
-            <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Training.svg" class="oxd-icons"></object>
-                <p>Training</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Training.svg" download="training.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Training.svg', 'training', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row my-3"></div>
-        <div class="row">
-          <div class="col-custom-5">
-            <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Menu/Travel and Expense.svg" class="oxd-icons"></object>
-                <p>Travel & Expense</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Menu/Travel and Expense.svg" download="travel-expense.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Menu/Travel and Expense.svg', 'travel-expense', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
+          </div> 
         </div>
 
         <div class="row my-3"></div>
         <div class="title-row">PIM Icons</div><hr>
+
+        <!-- PIM Icons Section -->
         <div class="row">
-          <div class="col-custom-5">
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/AZ.svg" class="oxd-icons"></object>
-                <p>AZ</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/AZ.svg" download="az.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/AZ.svg', 'az', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/AZ.svg" alt="oxd"/>
+               <p>AZ</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Acknowledgment Status-1.svg" alt="oxd"/>
+               <p>Acknowledgment Status 1</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Acknowledgment Status-2.svg" alt="oxd"/>
+               <p>Acknowledgment Status 2</p>
             </div>
           </div>
-          <div class="col-custom-5">
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Acknowledgment Status.svg" class="oxd-icons"></object>
-                <p>Acknowledgment Status</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Acknowledgment Status.svg" download="acknowledgment-status.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Acknowledgment Status.svg', 'acknowledgment-status', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Acknowledgment Status.svg" alt="oxd"/>
+               <p>Acknowledgment Status</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Add Note.svg" class="oxd-icons"></object>
-                <p>Add Note</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Add Note.svg" download="add-note.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Add Note.svg', 'add-note', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Add Note.svg" alt="oxd"/>
+               <p>Add Note</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/All reports.svg" class="oxd-icons"></object>
-                <p>All Reports</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/All reports.svg" download="all-reports.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/All reports.svg', 'all-reports', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/All reports.svg" alt="oxd"/>
+               <p>All Reports</p>
             </div>
-          </div>
-          <div class="col-custom-5">
-            <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Attachment.svg" class="oxd-icons"></object>
-                <p>Attachment</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Attachment.svg" download="attachment.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Attachment.svg', 'attachment', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
+          </div> 
         </div>
 
         <div class="row my-3"></div>
         <div class="row">
-          <div class="col-custom-5">
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Autocomplete.svg" class="oxd-icons"></object>
-                <p>Autocomplete</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Autocomplete.svg" download="autocomplete.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Autocomplete.svg', 'autocomplete', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Attachment-1.svg" alt="oxd"/>
+               <p>Attachment 1</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Attachment.svg" alt="oxd"/>
+               <p>Attachment</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Autocomplete.svg" alt="oxd"/>
+               <p>Autocomplete</p>
             </div>
           </div>
-          <div class="col-custom-5">
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/CSV.svg" class="oxd-icons"></object>
-                <p>CSV</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/CSV.svg" download="csv.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/CSV.svg', 'csv', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/CSV.svg" alt="oxd"/>
+               <p>CSV</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Comments.svg" class="oxd-icons"></object>
-                <p>Comments</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Comments.svg" download="comments.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Comments.svg', 'comments', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Calender2.svg" alt="oxd"/>
+               <p>Calendar 2</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Copy Template.svg" class="oxd-icons"></object>
-                <p>Copy Template</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Copy Template.svg" download="copy-template.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Copy Template.svg', 'copy-template', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Calender4.svg" alt="oxd"/>
+               <p>Calendar 4</p>
             </div>
-          </div>
-          <div class="col-custom-5">
-            <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Dashboard.svg" class="oxd-icons"></object>
-                <p>Dashboard</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Dashboard.svg" download="dashboard.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Dashboard.svg', 'dashboard', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
+          </div> 
         </div>
 
         <div class="row my-3"></div>
         <div class="row">
-          <div class="col-custom-5">
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Date Picker.svg" class="oxd-icons"></object>
-                <p>Date Picker</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Date Picker.svg" download="date-picker.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Date Picker.svg', 'date-picker', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/CheckBox Group.svg" alt="oxd"/>
+               <p>CheckBox Group</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Comments-1.svg" alt="oxd"/>
+               <p>Comments 1</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Comments.svg" alt="oxd"/>
+               <p>Comments</p>
             </div>
           </div>
-          <div class="col-custom-5">
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Detailed Report.svg" class="oxd-icons"></object>
-                <p>Detailed Report</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Detailed Report.svg" download="detailed-report.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Detailed Report.svg', 'detailed-report', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Copy Template.svg" alt="oxd"/>
+               <p>Copy Template</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Down.svg" class="oxd-icons"></object>
-                <p>Down</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Down.svg" download="down.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Down.svg', 'down', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Dashboard.svg" alt="oxd"/>
+               <p>Dashboard</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Download Resume.svg" class="oxd-icons"></object>
-                <p>Download Resume</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Download Resume.svg" download="download-resume.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Download Resume.svg', 'download-resume', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Date Picker.svg" alt="oxd"/>
+               <p>Date Picker</p>
             </div>
-          </div>
-          <div class="col-custom-5">
-            <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Edit.svg" class="oxd-icons"></object>
-                <p>Edit</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Edit.svg" download="edit.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Edit.svg', 'edit', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
+          </div> 
         </div>
 
         <div class="row my-3"></div>
         <div class="row">
-          <div class="col-custom-5">
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Filter.svg" class="oxd-icons"></object>
-                <p>Filter</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Filter.svg" download="filter.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Filter.svg', 'filter', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Date-1.svg" alt="oxd"/>
+               <p>Date 1</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Date.svg" alt="oxd"/>
+               <p>Date</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Detailed Report.svg" alt="oxd"/>
+               <p>Detailed Report</p>
             </div>
           </div>
-          <div class="col-custom-5">
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Like.svg" class="oxd-icons"></object>
-                <p>Like</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Like.svg" download="like.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Like.svg', 'like', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Down.svg" alt="oxd"/>
+               <p>Down</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Location.svg" class="oxd-icons"></object>
-                <p>Location</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Location.svg" download="location.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Location.svg', 'location', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Download Application Form-1.svg" alt="oxd"/>
+               <p>Download Application Form 1</p>
             </div>
-          </div>
-          <div class="col-custom-5">
+          </div> 
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/PDF.svg" class="oxd-icons"></object>
-                <p>PDF</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/PDF.svg" download="pdf.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/PDF.svg', 'pdf', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Download Application Form.svg" alt="oxd"/>
+               <p>Download Application Form</p>
             </div>
-          </div>
-          <div class="col-custom-5">
-            <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Profile.svg" class="oxd-icons"></object>
-                <p>Profile</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Profile.svg" download="profile.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Profile.svg', 'profile', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
-            </div>
-          </div>
+          </div> 
         </div>
 
         <div class="row my-3"></div>
         <div class="row">
-          <div class="col-custom-5">
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Search.svg" class="oxd-icons"></object>
-                <p>Search</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Search.svg" download="search.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Search.svg', 'search', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Download Resume.svg" alt="oxd"/>
+               <p>Download Resume</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Drop Down Selection.svg" alt="oxd"/>
+               <p>Drop Down Selection</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Edit-1.svg" alt="oxd"/>
+               <p>Edit 1</p>
             </div>
           </div>
-          <div class="col-custom-5">
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Share.svg" class="oxd-icons"></object>
-                <p>Share</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Share.svg" download="share.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Share.svg', 'share', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Edit-2.svg" alt="oxd"/>
+               <p>Edit 2</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Edit.svg" alt="oxd"/>
+               <p>Edit</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Edit_Fill.svg" alt="oxd"/>
+               <p>Edit Fill</p>
+            </div>
+          </div> 
+        </div>
+
+        <div class="row my-3"></div>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Email History.svg" alt="oxd"/>
+               <p>Email History</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Evaluaters.svg" alt="oxd"/>
+               <p>Evaluators</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/File.svg" alt="oxd"/>
+               <p>File</p>
             </div>
           </div>
-          <div class="col-custom-5">
+          <div class="col-lg-2">
             <div class="card icon-card">
-              <div class="icon-content">
-                <object type="image/svg+xml" data="../img/Iconz/Time.svg" class="oxd-icons"></object>
-                <p>Time</p>
-              </div>
-              <div class="icon-overlay">
-              <div class="icon-actions">
-                <a href="../img/Iconz/Time.svg" download="time.svg">SVG</a>
-                <button onclick="downloadSVGAsPNG('../img/Iconz/Time.svg', 'time', this)" style="position: relative;">
-                  PNG
-                  <div class="download-feedback">Downloaded!</div>
-                </button>
-              </div>
-              </div>
+               <img src="../img/Iconz/PIMIcons/Filter.svg" alt="oxd"/>
+               <p>Filter</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Form Design.svg" alt="oxd"/>
+               <p>Form Design</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Heart.svg" alt="oxd"/>
+               <p>Heart</p>
+            </div>
+          </div> 
+        </div>
+
+        <div class="row my-3"></div>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Info.svg" alt="oxd"/>
+               <p>Info</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Instructions-1.svg" alt="oxd"/>
+               <p>Instructions 1</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Instructions.svg" alt="oxd"/>
+               <p>Instructions</p>
             </div>
           </div>
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Like.svg" alt="oxd"/>
+               <p>Like</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Location.svg" alt="oxd"/>
+               <p>Location</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Mobile.svg" alt="oxd"/>
+               <p>Mobile</p>
+            </div>
+          </div> 
+        </div>
+
+        <div class="row my-3"></div>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Modify_Region-1.svg" alt="oxd"/>
+               <p>Modify Region 1</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Modify_Region.svg" alt="oxd"/>
+               <p>Modify Region</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/New Folder.svg" alt="oxd"/>
+               <p>New Folder</p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Open candidate in a anew tab.svg" alt="oxd"/>
+               <p>Open Candidate in New Tab</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/PDF.svg" alt="oxd"/>
+               <p>PDF</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Performance.svg" alt="oxd"/>
+               <p>Performance</p>
+            </div>
+          </div> 
+        </div>
+
+        <div class="row my-3"></div>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Profile.svg" alt="oxd"/>
+               <p>Profile</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Radio Button Group.svg" alt="oxd"/>
+               <p>Radio Button Group</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Recent reports.svg" alt="oxd"/>
+               <p>Recent Reports</p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Replace Resume.svg" alt="oxd"/>
+               <p>Replace Resume</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Reports.svg" alt="oxd"/>
+               <p>Reports</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Search-1.svg" alt="oxd"/>
+               <p>Search 1</p>
+            </div>
+          </div> 
+        </div>
+
+        <div class="row my-3"></div>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Search.svg" alt="oxd"/>
+               <p>Search</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Share.svg" alt="oxd"/>
+               <p>Share</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Single CheckBox.svg" alt="oxd"/>
+               <p>Single CheckBox</p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Sort.svg" alt="oxd"/>
+               <p>Sort</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Standard reports.svg" alt="oxd"/>
+               <p>Standard Reports</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Subscribers.svg" alt="oxd"/>
+               <p>Subscribers</p>
+            </div>
+          </div> 
+        </div>
+
+        <div class="row my-3"></div>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Summary Report.svg" alt="oxd"/>
+               <p>Summary Report</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Text Field.svg" alt="oxd"/>
+               <p>Text Field</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/TextArea.svg" alt="oxd"/>
+               <p>Text Area</p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Time.svg" alt="oxd"/>
+               <p>Time</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Togle Switch.svg" alt="oxd"/>
+               <p>Toggle Switch</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/View Audit Logs.svg" alt="oxd"/>
+               <p>View Audit Logs</p>
+            </div>
+          </div> 
+        </div>
+
+        <div class="row my-3"></div>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/View Candidate.svg" alt="oxd"/>
+               <p>View Candidate</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/View Template.svg" alt="oxd"/>
+               <p>View Template</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Work Email.svg" alt="oxd"/>
+               <p>Work Email</p>
+            </div>
+          </div>
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Work Number-1.svg" alt="oxd"/>
+               <p>Work Number 1</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Work Number-2.svg" alt="oxd"/>
+               <p>Work Number 2</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/Work Number.svg" alt="oxd"/>
+               <p>Work Number</p>
+            </div>
+          </div> 
+        </div>
+
+        <div class="row my-3"></div>
+        <div class="row">
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/ZA.svg" alt="oxd"/>
+               <p>ZA</p>
+            </div>
+          </div> 
+          <div class="col-lg-2">
+            <div class="card icon-card">
+               <img src="../img/Iconz/PIMIcons/view column.svg" alt="oxd"/>
+               <p>View Column</p>
+            </div>
+          </div> 
         </div>
 
         <div class="row my-3"></div>
@@ -1098,13 +830,11 @@
         <!-- /.card -->
         <div class="discription">
           Depending on icon visual size, icons have been designed to work best in these sizes <br>
-          Default size will be <b>12px</b> for button and general system icons, But
-          also can use <b> 12px</b> and <b>14px </b> depending on the icon optical view
+          Default size will be <b>12px</b> for button and general system icons, but
+          also can use <b>12px</b> and <b>14px</b> depending on the icon optical view
+        </div>
 
-         </div>
-
-       
-          <div class="row my-5"></div>
+        <div class="row my-5"></div>
       </div>
       <!-- /.col-lg-9 -->
 
@@ -1127,64 +857,6 @@
   <script src="../vendor/jquery/jquery.min.js"></script>
   <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script>
-      // Move this function outside any other function to make it global
-      async function downloadSVGAsPNG(svgUrl, filename, buttonElement) {
-        try {
-          const response = await fetch(svgUrl);
-          const svgContent = await response.text();
-          
-          // Create a blob from SVG content
-          const svgBlob = new Blob([svgContent], { type: 'image/svg+xml' });
-          const svgUrl2 = URL.createObjectURL(svgBlob);
-          
-          // Create an image element
-          const img = new Image();
-          img.onload = function() {
-            // Create canvas
-            const canvas = document.createElement('canvas');
-            const ctx = canvas.getContext('2d');
-            
-            // Set canvas size (you can adjust these dimensions)
-            canvas.width = 512;
-            canvas.height = 512;
-            
-            // Fill with white background
-            ctx.fillStyle = 'white';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
-            // Draw the SVG image onto canvas
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-            
-            // Convert canvas to PNG and download
-            canvas.toBlob(function(blob) {
-              const url = URL.createObjectURL(blob);
-              const a = document.createElement('a');
-              a.href = url;
-              a.download = filename + '.png';
-              document.body.appendChild(a);
-              a.click();
-              document.body.removeChild(a);
-              URL.revokeObjectURL(url);
-              
-              // Show feedback
-              const feedback = buttonElement.querySelector('.download-feedback');
-              feedback.classList.add('show');
-              setTimeout(() => {
-                feedback.classList.remove('show');
-              }, 2000);
-            }, 'image/png');
-            
-            URL.revokeObjectURL(svgUrl2);
-          };
-          
-          img.src = svgUrl2;
-          
-        } catch (error) {
-          console.error('Failed to download SVG as PNG:', error);
-          alert('Failed to download PNG');
-        }
-      }
-
       var myVar;
 
       function myFunction() {
@@ -1212,11 +884,6 @@ for (i = 0; i < dropdown.length; i++) {
   }
   });
 }
-
-// The previous downloadSVGAsPNG function was moved outside this script block.
-// The extra feedback logic at the end of the original script was redundant and removed.
-
-
 </script>
 
 </body>
