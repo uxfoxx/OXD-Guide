@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>OIM</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/oxd-styler.css" rel="stylesheet">
+
+</head>
+
+<body ><!-- onload="myFunction()" -->
+
+
+</div>
+<div id="myDiv">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg   fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><div class="orange-logo"><img src="../img/logo.png" width="100%"></div>
+        <span class="title-o">OXD Interaction Model</span> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#">Design Guide</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-2">
+       
+        <br>
+        <div class="list-group">
+         
+          <a href="intro.html" class="list-group-item ">OIM Introduction </a>
+          <a href="#" class="list-group-item dropdown-btn active">Interactive Standards</a>
+           <div class="dropdown-container sub-item" style="display: block;">            
+                <a href="st1.html" class="sub-item active">Cache Page Layout</a>
+                <a href="st2.html">Background Loading</a>
+                <a href="st3.html">3 Seconds Rule</a>
+                <a href="st4.html">Maintain visual Ratio</a>
+                <a href="st5.html">Fetch Data in cluster</a>
+                <a href="st6.html">Page Blockers Overlay</a>
+                <a href="st7.html">Page loaders</a>
+                <!-- <a href="st8.html">menu</a> -->
+              </div>     
+      </div>
+     <!--  Side Menu -->
+
+    </div>
+
+
+      <div class="col-lg-10">
+          <div class="card card-outline-secondary my-4">
+          <div class="card-header">
+           Cache Page Layout
+          </div>
+          <img src="../img/s1bg.png">
+
+          <div class="container card-padding">
+          <div class="row my-2"></div>
+
+         
+          <div class="discription">
+           Loading speed plays a crucial role in determining the overall user experience (UX) of a website or application. Users have come to expect instant access to information and fast-paced interactions, and the time it takes for a website or application to load has become a significant factor in determining its success. And with UX expert Jakob Nielsen(2010) stating that after 1 second of load time; users can sense a delay, timing really does matter! Slow loading speed can lead to frustration, dissatisfaction, and even abandonment of the website or application by users. <br><br>
+           So as a solution modern website or web application used to cash their page layout and basic typical style on the browser. this residue to time reproduce exact same styles again and again 
+          </div>
+
+        </div>
+
+         
+          <div class="card-header">
+          OXD Common Layout That Can Cache 
+          </div>
+          <div class="container card-padding">
+            <br>
+            <img src="../img/oxd-layouts.png" width="100%">
+
+          <p class="sub-title">Discoverability</p>
+          <div class="discription">
+           Can users quickly find the model’s? Understand the primary object and perform the actions they care about? Can they use the system successfully at the first time?
+            <br>
+          </div>
+           <p class="sub-title">Learnability</p>
+           <div class="discription">
+           How long does it take for users to internalize? How to use the system competently? Even consumer products often have a slight learning curve today.
+           </div>
+           
+           <p class="sub-title">User Efficiency and Productivity </p>
+           <div class="discription">
+           Once users are competent in using the system, how easy is it for them to perform common or repetitive tasks? Can they perform bulk actions all at once, or do they have to perform dozens or even hundreds of separate actions?
+           </div>
+     
+           <p class="sub-title">System response time</p>
+           <div class="discription">
+           Once users take an action, how long does the system take to respond? In a production environment, user efficiency and system response time combine to define the total task time
+           </div>
+
+        
+
+       
+
+          <div class="row my-3"></div>
+        
+       
+       
+
+        
+          <div class="row my-5"></div>
+        </div>
+      </div>
+      <!-- /.col-lg-9 -->
+
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <img src="../img/logo.png" width="60px">
+      <p class="m-0 text-center text-white">Copyright &copy; OrangeHRM.Inc 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+      var myVar;
+
+      function myFunction() {
+        myVar = setTimeout(showPage, 4000);
+      }
+
+      function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+      }
+</script>
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+</body>
+
+</html>

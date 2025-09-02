@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>OIM</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/oxd-styler.css" rel="stylesheet">
+
+</head>
+
+<body ><!-- onload="myFunction()" -->
+
+
+</div>
+<div id="myDiv">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg   fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><div class="orange-logo"><img src="../img/logo.png" width="100%"></div>
+        <span class="title-o">OXD Interaction Model</span> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="#">Design Guide</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-2">
+       
+        <br>
+        <div class="list-group">
+         
+          <a href="intro.html" class="list-group-item">OIM Introduction </a>
+          <a href="#" class="list-group-item dropdown-btn active">Interactive Standards</a>
+           <div class="dropdown-container sub-item" style="display: block;">            
+            <a href="st1.html">Cache Page Layout</a>
+                <a href="st2.html">Background Loading</a>
+                <a href="st3.html">3 Seconds Rule</a>
+                <a href="st4.html">Maintain visual Ratio</a>
+                <a href="st5.html">Fetch Data in cluster</a>
+                <a href="st6.html">Page Blockers Overlay</a>
+                <a href="st7.html"class="sub-item active">Page Loaders</a>
+                <!-- <a href="st8.html">menu</a> -->
+              </div>     
+      </div>
+     <!--  Side Menu -->
+
+    </div>
+
+
+      <div class="col-lg-10">
+          <div class="card card-outline-secondary my-4">
+          <div class="card-header">
+           Page Loaders
+          </div>
+          <br>
+          <img src="../img/sk.gif" width="100%">
+
+          <div class="container card-padding">
+          <div class="row my-2"></div>
+
+         
+          <div class="discription">
+              Page loaders are visual indicators displayed on websites while the content is being loaded. They improve user experience by providing feedback that the page is actively processing the request, reducing perceived wait times, and preventing users from abandoning the site due to uncertainty. Page loaders can take various forms, such as spinners, progress bars, or animations, and are designed to be visually engaging and informative.
+          </div>
+
+        </div>
+
+         
+        
+          <div class="container card-padding">
+         
+
+          <div class="card-header">
+          Spinner Loader
+          </div>
+            <div class="container card-padding">
+           <p class="sub-title">Spinner Loader</p>
+           <div class="discription">
+           List items, small forms, filter popups, Should able to use thse OXD Spinner loader.
+           </div>
+            </div>
+           
+           <div class="card-header">
+        Skeleton Loader
+           </div>
+           <br><div class="discription">
+               Skeleton loaders are static or animated placeholders displayed while content is loading, providing a visual indication of the type of content (e.g., images, text) that will appear. These light gray or neutral-colored boxes reduce perceived wait times and offer a more engaging experience than blank screens or spinners, which can create uncertainty.<br><br>
+               Skeleton loaders should not be used for long-running processes or for very fast processes that take less than 300ms. As soon as the data is ready, the content replaces the placeholders.
+           </div>
+           </div>
+            <br> <img src="../img/skeleton1.gif" width="100%">
+            <div class="container card-padding">
+            <br>
+            <b>Number of Columns</b><br>
+            </p><ul>
+              <li>When a list does not have a specified column configuration, it should always display the actual number of columns in the list.</li> <br>
+              <li>If a list has a set number of columns configured, it should always display the default number of columns.</li>
+        
+            <br>
+            <div class="discription">
+               The number of columns can sometimes be determined based on specific configurations, deviating from the standard. (This can be happened due to various scenarios, such as client usage etc..) <br><br>
+               When list skeletons with hidden columns, such as action buttons that only appear on hover, it is unnecessary to include these action buttons in the skeleton view. Instead, increase the width of the visible columns to utilize the available space effectively.
+                <br>
+                <br>
+                <br> <img src="../img/skeleton3.png" width="100%">
+            </div>
+             </div>
+         
+           <div class="container card-padding">
+           <br><b>Row Height & Adapting to Content</b><br>
+           <br><div class="discription">
+              For rows where different types of content (text, images, icons, etc.) are present, represent each type in the skeleton screen. For example, if a row contains an image and text, show a placeholder for the image and text in the skeleton screen accordingly. <br> <br>
+               
+               Also Without showing exact number of  text lines It's possible to use visual cues such as gradients, fading effects within the skeleton screen to indicate where content might extend beyond the visible area. This helps users understand that the row height can vary without disrupting the overall layout consistency.
+             <br><br>
+             
+             It is not necessary to match the exact number of items in the skeleton loader. Better  if it's possible to display the layout and the maximum number of elements,but it is not essential to show every single item. <br> <br>
+             
+             Ensure that skeleton loading is applied to all content, including the top part of the list view,when the screen is loading for the first time.(search bar, filter,configuartion buttons and etc )
+           </div>
+           
+           <div class="discription">
+               <br><b>Row Display Limits</b><br>
+               <br><div class="discription">
+                   Display up to 15 rows in the skeleton loader (If the screen still has more empty space, may need to define no of rows deviating from the standard)<br><br>
+                   Depending on the row height,
+                 <br>
+               </div>
+           </div>
+           </p><ul>
+             <li>For rows with a height of 45px or less, display 15 rows</li> <br>
+             <li>For rows with a height greater than 45px, display 10 rows</li><br>
+             
+               <br> <img src="../img/skeleton4.png" width="100%">
+                   </div>
+          
+          
+           <div class="container card-padding">
+          <b>Indicating Headers</b><br>
+          </p><ul>
+            <li>Size - Column header width should matches the width of the corresponding row data</li> <br>
+            <li>Placeholder - Instead of displaying actual column header names, use skeleton indicators</li> <br>
+            <li>Differentiation - Use different styles to differentiate between column headers and data rows (e.g., darker shades) </li><br>
+            <li>Consistency - Maintain consistent representation of column headers throughout the system</li>
+            <br> <img src="../img/skeleton5.png" width="100%">
+          <br>
+          </div>
+           
+           <div class="container card-padding">
+          <b>Hide Componenets During Initial Loading</b><br>
+          <br><div class="discription">
+              Hide the pagination during the initial loading of the screen. This prevents users from interacting with pagination elements while the content is still loading
+              <br><br>
+              Hide the side panel collapse button during skeleton loading. This prevents any potential issues that could arise from users interacting with the side panel while the skeleton loading is in progress.
+            <br>
+          </div>
+          </div>
+          
+          <div class="container card-padding">
+         <br><b>Handling Empty List Tabs</b><br>
+         <br><div class="discription">
+             For empty tabs with 0 row items, do not display the spinner loader or the empty message initially. Use the same skeleton loading style instead of any other loader or spinner
+         </div>
+      
+          <br>
+          </div>
+           
+           <div class="container card-padding">
+          <b>Use Cases</b><br>
+          <br><div class="discription">
+              OXD List view , OXD Forms, OXD Dashbord, should able to use Skeleton loader
+          </div>
+         
+          </p><ul>
+            <li>First-Time Access: When users initially navigate to a screen or list, especially if it involves fetching data from a server </li> <br>
+            <li>Navigating Between Screens: Whenever users navigate to a different section or screen within the application, if new data needs to be fetched or if there's a delay in rendering content. This includes switching tabs or pages where data varies</li><br>
+            <li>Filter Application: When users apply filters or sorting options that trigger a change in displayed content </li> <br>
+            <li>Reapplying Filters: After users modify existing filters or sort orders, display the skeleton screen to show that the updated data is loading  </li>
+            
+            
+      
+          <br>
+          </div>
+        
+           </div>
+            </div>
+        
+           </div>
+            </div>
+           
+           
+           
+           
+           </div>
+            </div>
+          
+          
+          
+          
+       
+       
+       <div class="row my-3"></div>
+        
+          <div class="row my-5"></div>
+        </div>
+      </div>
+      <!-- /.col-lg-9 -->
+
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <img src="../img/logo.png" width="60px">
+      <p class="m-0 text-center text-white">Copyright &copy; OrangeHRM.Inc 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+      var myVar;
+
+      function myFunction() {
+        myVar = setTimeout(showPage, 4000);
+      }
+
+      function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+      }
+</script>
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+</script>
+
+</body>
+
+</html>
