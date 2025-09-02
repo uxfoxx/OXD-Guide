@@ -89,6 +89,17 @@
   border-color: #ff7b1d;
 }
 
+.icon-actions {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.icon-card:hover .icon-actions {
+  opacity: 1;
+  visibility: visible;
+}
+
 .copy-feedback {
   position: absolute;
   background: #76bc21;
