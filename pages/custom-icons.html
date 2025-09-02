@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>OXD Elements</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="../css/oxd-styler.css" rel="stylesheet">
+  <style type="text/css">
+    #myDiv
+    
+     /* display: none;*/
+    
+    .bg  {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.path {
+  animation: draw 3.0s infinite;
+  fill: #fff;
+}
+ 
+ @keyframes draw {
+  50% {
+    stroke-dashoffset: 0;
+
+
+
+  }
+}
+.oxd-icons{
+  width: 54px;
+  height:54px;
+  fill: red;
+  color: red;
+    stroke: red;
+  fill: red;
+
+    /* Make sure you define dimensions for your div otherwise it wont show u*/
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+}
+
+
+.icon-card
+{
+  padding-left: 36px;
+}
+
+.icon-actions {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.icon-actions button,
+.icon-actions a {
+  font-size: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-decoration: none;
+  border: 1px solid #e8eaef;
+  background-color: #f1f2f5;
+  color: #64728c;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.icon-actions button:hover,
+.icon-actions a:hover {
+  background-color: #ff7b1d;
+  color: #fff;
+  border-color: #ff7b1d;
+}
+
+.copy-feedback {
+  position: absolute;
+  background: #76bc21;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 10px;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.copy-feedback.show {
+  opacity: 1;
+}
+
+
+</style>
+</head>
+
+<body ><!-- onload="myFunction()" -->
+<!-- <div style="width: 100%; height:100%; z-index: 100000; position: absolute; width: 100%; height: 100%; background-color: #fff; margin-top: -60px;" id="loader">
+  
+        <div style="width: 80px; height: 100px; top:50%; left:50%; position: absolute;transform: translate(-50%, -50%); ">
+       <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 600 600">
+
+        <path class=" path" stroke="#64728c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="1000" stroke-dashoffset="1000" fill="none" d="M122.44,95.63c3.45-1.3,6.55-2.13,9.62-3,7-2.11,14-1.85,21.09-.32A68.39,68.39,0,0,1,180.72,105c8.7,6.69,14.34,15.5,17.58,25.9,6.42,20.66,1.91,45.49-12.25,62-13.32,15.53-30,24.87-50.4,27.47-17.57,2.23-34-1.37-49.53-9.71A77.26,77.26,0,0,1,58,185.26c-6.49-9.71-10.75-20.28-11.83-31.95-1.49-16.2,3.41-30.32,14.22-42.42a50.59,50.59,0,0,1,11.72-9.76,33.34,33.34,0,0,1,24.76-4.26c9.15,1.9,17.61,5.26,25,11.09,5.38,4.26,9.53,9.44,11.4,16.19a25.74,25.74,0,0,1,.6,2.74c.08.49.29,1.15-.45,1.36s-1.45.47-2-.26c-.46-.57-.89-1.18-1.37-1.73a47.88,47.88,0,0,0-31.31-16.48,33.48,33.48,0,0,0-9.22.21,19.68,19.68,0,0,0-11.07,5.78c-8.47,8.54-13.27,18.69-12.49,30.92.55,8.54,3.88,16.15,9,22.93a61.05,61.05,0,0,0,32.93,22.27c16.69,4.74,33,3.55,48.52-4.37,8-4.07,14.69-9.62,19.19-17.55a52.05,52.05,0,0,0,6.29-19,60.53,60.53,0,0,0,.11-15.45A31.11,31.11,0,0,0,175,119.89a55.3,55.3,0,0,0-22.77-16.79c-7.29-3-15-4.68-22.69-6.11C127.34,96.58,125.12,96.15,122.44,95.63Z" transform="translate(-45.89 -34.52)"/>
+
+        <path class=" path" stroke="#64728c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="1000" stroke-dashoffset="1000" fill="none"  d="M168,46.51A227,227,0,0,0,139,61.24a140.77,140.77,0,0,0-20.05,14.15c-1.26,1.09-2.49,2.21-3.94,3.5a15.68,15.68,0,0,1,0-4.27,51.28,51.28,0,0,1,4.33-17.69,29.4,29.4,0,0,1,16.48-15.68,97.77,97.77,0,0,1,25.57-6,132.65,132.65,0,0,1,18.9-.64,75.37,75.37,0,0,1,10.33.88,1,1,0,0,1,0,1c-5.79,12-12,23.72-20,34.42-1,1.29-2,2.53-3,3.77A25.9,25.9,0,0,1,155.19,83a116.28,116.28,0,0,1-19.84,4.25c-3.18.42-6.38.77-9.58,1.16a4,4,0,0,1-1.68,0A5.86,5.86,0,0,1,125.27,86c4-6.59,9.27-12.15,14.92-17.35,8.27-7.62,17.4-14.13,26.67-20.44.55-.38,1.09-.78,1.64-1.18a1.7,1.7,0,0,0,1.28-1.2A2.29,2.29,0,0,0,168,46.51Z" transform="translate(-45.89 -34.52)"/>
+
+
+</svg>
+<a>Loading</a>
+</div> -->
+
+</div>
+<div id="myDiv">
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg   fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#"><div class="orange-logo"><img src="../img/logo.png" width="100%"></div>
+        <span class="title-o">Orange eXperience Design </span> </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Blog
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Live Demo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-lg-2">
+        <h1 class="my-5"><span style="font-size: 50px;">Design</span> <br><span>Guide </span> </h1>
+           <div class="list-group">
+         
+          <a href="../index.html" class="list-group-item">OXD Introduction </a>
+          <a href="../main-catalog/design.html" class="list-group-item">Design Thinking</a>
+          <a href="#" class="list-group-item dropdown-btn ">UX Standards</a>
+           <div class="dropdown-container sub-item" >            
+                <a href="../main-catalog/ui-standards.html" >UX Guidelines</a>
+                <a href="../main-catalog/form-design.html">Form Design Patterns</a>
+                <a href="../main-catalog/ux-rules.html">UX Rules & Laws</a>
+                <a href="../main-catalog/keyboard.html">Keyboard Accessibility</a>
+              </div>
+          <a href="#" class="list-group-item dropdown-btn">Visual Design</a>
+              <div class="dropdown-container sub-item" style="display: block;">            
+                <a href="../design-catalog/color.html">Colors</a>
+                <a href="../design-catalog/typo.html">Typograpy</a>
+                <a href="../design-catalog/images.html">Images</a>
+                <a href="custom-icons.html" class=" sub-item active">Icons</a>
+                <a href="../design-catalog/motion.html">Motion Animations</a>
+              </div>
+          
+          <a href="#" class="list-group-item dropdown-btn" >Grid & Layouts</a>
+        <div class="dropdown-container sub-item active" >            
+                <a href="../main-catalog/layout.html" class=" sub-item ">Main Layouts</a>
+                <a href="../main-catalog/grid.html" >Grid System</a>
+              </div>
+          <a href="#" class="list-group-item dropdown-btn" >Navigations</a>
+           <div class="dropdown-container sub-item " >            
+                <a href="../main-catalog/side-bar.html"  >Sidebar</a>
+                <a href="../main-catalog/topbar.html">Topbar</a>
+                <a href="../main-catalog/stepper.html">Stepper</a>
+
+              </div>
+          <a href="../main-catalog/componets.html" class="list-group-item dropdown-btn">Components</a>
+           <div class="dropdown-container sub-item ">            
+                <a href="button.html">Buttons</a>
+                <a href="textbox.html">Text-box</a>
+                <a href="check-box.html">Check-box</a>
+                <a href="radio-pills.html">Radio</a>
+                <a href="radio.html">Radio Pills</a>
+                <a href="switch.html">Switch</a>
+                <a href="search-box.html">Search-box</a>
+                <a href="mutiselect.html">Multi Select</a>
+                <a href="dropdown.html">Dropdown</a>
+                <a href="number-dropdwon.html">Number Dropdown</a>
+                <a href="upload-input.html">Upload Inputs</a>
+                <a href="upload-inputbox.html">Upload input box</a>
+                <a href="date-picker.html">Date picker</a>
+                <a href="time-picker.html">Time picker</a>
+                <a href="color-picker.html">Color picker</a>
+                <a href="lable.html">Labels</a>
+                <a href="help-lable.html">Help Labels</a>
+                <a href="status-lable.html">Status labels</a>
+                <a href="group-input.html">Group Input</a>
+                <a href="group-overlay.html">Group Overlay</a>
+                <a href="scroll-bar.html">Scroll-bar</a>
+                <a href="count-slider.html">Count Slider</a>
+                <a href="text-aria.html">Text-area</a>
+                <a href="comment-box.html">Comment-box</a>
+                <a href="pagination.html">Paginations</a>
+                <a href="card-loader.html">Card loader</a>
+                <a href="divider.html">Divider</a>
+           </div>
+      <!--<a href="Widgets.html" class="list-group-item">Widgets</a> -->
+          <a href="../main-catalog/table-list.html" class="list-group-item ">Tables & List View</a>
+         
+          <a href="../main-catalog/card.html" class="list-group-item sub-item ">Cards & Shapes</a>
+          <a href="../main-catalog/modals.html" class="list-group-item ">Modals & Popups</a>
+        
+          <a href="../main-catalog/advance-componets.html" class="list-group-item">Advance Components </a>
+          <a href="../main-catalog/charts.html" class="list-group-item ">Charts</a>
+          <hr>
+          <a href="qa.html" class="list-group-item active"><div class="img-icon"><img src="../img/behaviours.png"></div> UI Behaviours</a>
+          <a href="developer.html" class="list-group-item active"><div class="img-icon"><img src="../img/dev.png"></div> QA Standards</a>
+      
+         
+      </div>
+     <!--  Side Menu -->
+
+    </div>
+
+
+      <div class="col-lg-10">
+
+        <div class="my-4"></div>
+        <div class="title-row">Module Icons</div><hr>
+        <!-- Module Icons Container -->
+        <div id="module-icons-container" class="row">
+          <!-- Module icons will be dynamically loaded here -->
+        </div>
+
+        <div class="row my-3"></div>
+        <div class="title-row">PIM Icons</div><hr>
+        <!-- PIM Icons Container -->
+        <div id="pim-icons-container" class="row">
+          <!-- PIM icons will be dynamically loaded here -->
+        </div>
+
+        <div class="row my-3"></div>
+        <div class="title-row">Sizing</div><hr>
+        <!-- /.card -->
+        <div class="discription">
+          Depending on icon visual size, icons have been designed to work best in these sizes <br>
+          Default size will be <b>12px</b> for button and general system icons, But
+          also can use <b> 12px</b> and <b>14px </b> depending on the icon optical view
+
+         </div>
+
+       
+          <div class="row my-5"></div>
+      </div>
+      <!-- /.col-lg-9 -->
+
+    </div>
+</div>
+
+
+  <!-- /.container -->
+
+  <!-- Footer -->
+  <footer class="py-5 bg-dark">
+    <div class="container">
+      <img src="../img/logo.png" width="60px">
+      <p class="m-0 text-center text-white">Copyright &copy; OrangeHRM.Inc 2020</p>
+    </div>
+    <!-- /.container -->
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="../vendor/jquery/jquery.min.js"></script>
+  <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script>
+      var myVar;
+
+      function myFunction() {
+        myVar = setTimeout(showPage, 4000);
+      }
+
+      function showPage() {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+      }
+</script>
+<script>
+/* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+  this.classList.toggle("active");
+  var dropdownContent = this.nextElementSibling;
+  if (dropdownContent.style.display === "block") {
+  dropdownContent.style.display = "none";
+  } else {
+  dropdownContent.style.display = "block";
+  }
+  });
+}
+
+// Icon data arrays
+const moduleIcons = [
+  { path: '../img/Iconz/Menu/App Builder.svg', name: 'App Builder' },
+  { path: '../img/Iconz/Menu/Attendance.svg', name: 'Attendance' },
+  { path: '../img/Iconz/Menu/Career Development.svg', name: 'Career Development' },
+  { path: '../img/Iconz/Menu/Configurations.svg', name: 'Configurations' },
+  { path: '../img/Iconz/Menu/Employee Managem.svg', name: 'Employee Management' },
+  { path: '../img/Iconz/Menu/Goals.svg', name: 'Goals' },
+  { path: '../img/Iconz/Menu/Grievances.svg', name: 'Grievances' },
+  { path: '../img/Iconz/Menu/HR Administration.svg', name: 'HR Administration' },
+  { path: '../img/Iconz/Menu/Integrations.svg', name: 'Integrations' },
+  { path: '../img/Iconz/Menu/Leave.svg', name: 'Leave' },
+  { path: '../img/Iconz/Menu/Management Tools.svg', name: 'Management Tools' },
+  { path: '../img/Iconz/Menu/Onboarding.svg', name: 'Onboarding' },
+  { path: '../img/Iconz/Menu/Performance.svg', name: 'Performance' },
+  { path: '../img/Iconz/Menu/Recruitment (ATS).svg', name: 'Recruitment (ATS)' },
+  { path: '../img/Iconz/Menu/Reports and Analyti.svg', name: 'Reports and Analytics' },
+  { path: '../img/Iconz/Menu/Request Desk.svg', name: 'Request Desk' },
+  { path: '../img/Iconz/Menu/Roster.svg', name: 'Roster' },
+  { path: '../img/Iconz/Menu/Surveys.svg', name: 'Surveys' },
+  { path: '../img/Iconz/Menu/Time Tracking.svg', name: 'Time Tracking' },
+  { path: '../img/Iconz/Menu/Training.svg', name: 'Training' },
+  { path: '../img/Iconz/Menu/Travel and Expense.svg', name: 'Travel and Expense' }
+];
+
+const pimIcons = [
+  { path: '../img/Iconz/Acknowledgment Status-1.svg', name: 'Acknowledgment Status 1' },
+  { path: '../img/Iconz/Acknowledgment Status-2.svg', name: 'Acknowledgment Status 2' },
+  { path: '../img/Iconz/Acknowledgment Status.svg', name: 'Acknowledgment Status' },
+  { path: '../img/Iconz/Add Note.svg', name: 'Add Note' },
+  { path: '../img/Iconz/All reports.svg', name: 'All Reports' },
+  { path: '../img/Iconz/Attachment-1.svg', name: 'Attachment 1' },
+  { path: '../img/Iconz/Attachment.svg', name: 'Attachment' },
+  { path: '../img/Iconz/Autocomplete.svg', name: 'Autocomplete' },
+  { path: '../img/Iconz/AZ.svg', name: 'A-Z Sort' },
+  { path: '../img/Iconz/CSV.svg', name: 'CSV' },
+  { path: '../img/Iconz/Calender2.svg', name: 'Calendar 2' },
+  { path: '../img/Iconz/Calender4.svg', name: 'Calendar 4' },
+  { path: '../img/Iconz/CheckBox Group.svg', name: 'CheckBox Group' },
+  { path: '../img/Iconz/Comments-1.svg', name: 'Comments 1' },
+  { path: '../img/Iconz/Comments.svg', name: 'Comments' },
+  { path: '../img/Iconz/Copy Template.svg', name: 'Copy Template' },
+  { path: '../img/Iconz/Dashboard.svg', name: 'Dashboard' },
+  { path: '../img/Iconz/Date Picker.svg', name: 'Date Picker' },
+  { path: '../img/Iconz/Date-1.svg', name: 'Date 1' },
+  { path: '../img/Iconz/Date.svg', name: 'Date' },
+  { path: '../img/Iconz/Detailed Report.svg', name: 'Detailed Report' },
+  { path: '../img/Iconz/Down.svg', name: 'Down Arrow' },
+  { path: '../img/Iconz/Download Application Form-1.svg', name: 'Download Application Form 1' },
+  { path: '../img/Iconz/Download Application Form.svg', name: 'Download Application Form' },
+  { path: '../img/Iconz/Download Resume.svg', name: 'Download Resume' },
+  { path: '../img/Iconz/Drop Down Selection.svg', name: 'Drop Down Selection' },
+  { path: '../img/Iconz/Edit-1.svg', name: 'Edit 1' },
+  { path: '../img/Iconz/Edit-2.svg', name: 'Edit 2' },
+  { path: '../img/Iconz/Edit.svg', name: 'Edit' },
+  { path: '../img/Iconz/Edit_Fill.svg', name: 'Edit Fill' },
+  { path: '../img/Iconz/Email History.svg', name: 'Email History' },
+  { path: '../img/Iconz/Evaluaters.svg', name: 'Evaluators' },
+  { path: '../img/Iconz/File.svg', name: 'File' },
+  { path: '../img/Iconz/Filter.svg', name: 'Filter' },
+  { path: '../img/Iconz/Form Design.svg', name: 'Form Design' },
+  { path: '../img/Iconz/Heart.svg', name: 'Heart' },
+  { path: '../img/Iconz/Info.svg', name: 'Info' },
+  { path: '../img/Iconz/Instructions-1.svg', name: 'Instructions 1' },
+  { path: '../img/Iconz/Instructions.svg', name: 'Instructions' },
+  { path: '../img/Iconz/Like.svg', name: 'Like' },
+  { path: '../img/Iconz/Location.svg', name: 'Location' },
+  { path: '../img/Iconz/Mobile.svg', name: 'Mobile' },
+  { path: '../img/Iconz/Modify_Region-1.svg', name: 'Modify Region 1' },
+  { path: '../img/Iconz/Modify_Region.svg', name: 'Modify Region' },
+  { path: '../img/Iconz/New Folder.svg', name: 'New Folder' },
+  { path: '../img/Iconz/Open candidate in a anew tab.svg', name: 'Open Candidate New Tab' },
+  { path: '../img/Iconz/PDF.svg', name: 'PDF' },
+  { path: '../img/Iconz/Performance.svg', name: 'Performance' },
+  { path: '../img/Iconz/Profile.svg', name: 'Profile' },
+  { path: '../img/Iconz/Radio Button Group.svg', name: 'Radio Button Group' },
+  { path: '../img/Iconz/Recent reports.svg', name: 'Recent Reports' },
+  { path: '../img/Iconz/Replace Resume.svg', name: 'Replace Resume' },
+  { path: '../img/Iconz/Reports.svg', name: 'Reports' },
+  { path: '../img/Iconz/Search-1.svg', name: 'Search 1' },
+  { path: '../img/Iconz/Search.svg', name: 'Search' },
+  { path: '../img/Iconz/Share.svg', name: 'Share' },
+  { path: '../img/Iconz/Single CheckBox.svg', name: 'Single CheckBox' },
+  { path: '../img/Iconz/Sort.svg', name: 'Sort' },
+  { path: '../img/Iconz/Standard reports.svg', name: 'Standard Reports' },
+  { path: '../img/Iconz/Subscribers.svg', name: 'Subscribers' },
+  { path: '../img/Iconz/Summary Report.svg', name: 'Summary Report' },
+  { path: '../img/Iconz/Text Field.svg', name: 'Text Field' },
+  { path: '../img/Iconz/TextArea.svg', name: 'Text Area' },
+  { path: '../img/Iconz/Time.svg', name: 'Time' },
+  { path: '../img/Iconz/Togle Switch.svg', name: 'Toggle Switch' },
+  { path: '../img/Iconz/View Audit Logs.svg', name: 'View Audit Logs' },
+  { path: '../img/Iconz/View Candidate.svg', name: 'View Candidate' },
+  { path: '../img/Iconz/View Template.svg', name: 'View Template' },
+  { path: '../img/Iconz/Work Email.svg', name: 'Work Email' },
+  { path: '../img/Iconz/Work Number-1.svg', name: 'Work Number 1' },
+  { path: '../img/Iconz/Work Number-2.svg', name: 'Work Number 2' },
+  { path: '../img/Iconz/Work Number.svg', name: 'Work Number' },
+  { path: '../img/Iconz/ZA.svg', name: 'Z-A Sort' },
+  { path: '../img/Iconz/view column.svg', name: 'View Column' }
+];
+
+// Function to copy SVG content to clipboard
+async function copySVGToClipboard(iconPath, buttonElement) {
+  try {
+    const response = await fetch(iconPath);
+    const svgContent = await response.text();
+    await navigator.clipboard.writeText(svgContent);
+    
+    // Show feedback
+    const feedback = buttonElement.querySelector('.copy-feedback');
+    feedback.classList.add('show');
+    setTimeout(() => {
+      feedback.classList.remove('show');
+    }, 2000);
+  } catch (error) {
+    console.error('Failed to copy SVG:', error);
+    alert('Failed to copy SVG content');
+  }
+}
+
+// Function to create icon card
+function createIconCard(icon) {
+  const iconName = icon.name.toLowerCase().replace(/\s+/g, '-');
+  
+  return `
+    <div class="col-lg-2">
+      <div class="card icon-card">
+        <object type="image/svg+xml" data="${icon.path}" class="oxd-icons"></object>
+        <p>${icon.name}</p>
+        <div class="icon-actions">
+          <a href="${icon.path}" download="${iconName}.svg">Download</a>
+          <button onclick="copySVGToClipboard('${icon.path}', this)" style="position: relative;">
+            Copy SVG
+            <div class="copy-feedback">Copied!</div>
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+// Function to load icons into containers
+function loadIcons() {
+  const moduleContainer = document.getElementById('module-icons-container');
+  const pimContainer = document.getElementById('pim-icons-container');
+  
+  // Load module icons
+  moduleIcons.forEach(icon => {
+    moduleContainer.innerHTML += createIconCard(icon);
+  });
+  
+  // Load PIM icons
+  pimIcons.forEach(icon => {
+    pimContainer.innerHTML += createIconCard(icon);
+  });
+}
+
+// Load icons when page is ready
+document.addEventListener('DOMContentLoaded', loadIcons);
+</script>
+
+</body>
+
+</html>
