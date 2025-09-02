@@ -1231,7 +1231,7 @@
       <!-- /.col-lg-9 -->
 
     </div>
-</div>
+  </div>
 
 
   <!-- /.container -->
@@ -1258,7 +1258,6 @@
           e.stopPropagation();
           const iconPath = this.getAttribute('data-icon-path');
           const iconName = this.getAttribute('data-icon-name');
-          const iconPath = this.getAttribute('data-icon-path');
           // Fetch the SVG file and download it
           fetch(iconPath)
             .then(response => response.blob())
@@ -1283,6 +1282,8 @@
       document.querySelectorAll('.download-btn.png-btn').forEach(function(btn) {
         btn.addEventListener('click', function(e) {
           e.stopPropagation();
+          const iconPath = this.getAttribute('data-icon-path');
+          const iconName = this.getAttribute('data-icon-name');
           // Fetch SVG content and convert to PNG
           fetch(iconPath)
             .then(response => response.text())
