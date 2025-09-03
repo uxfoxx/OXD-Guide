@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Placeholder Standards</title>
+  <title>Placeholder Standards (Product-Specific)</title>
 
   <!-- Bootstrap core CSS -->
   <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -136,63 +136,116 @@
 
 
       <div class="col-lg-10">
-          <div class="card card-outline-secondary my-4">
-          <div class="card-header">
-          Placeholder Standards
-          </div>
-          <img src="https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
-
-          <div class="container card-padding">
-          <div class="row my-2"></div>
-          <div class="discription">
-This section outlines the guidelines and best practices for using placeholders in the user interface. Effective placeholders enhance usability by providing clear indications of expected input formats and improving the overall user experience.         </div>
-
-          <div class="row my-3"></div>
-          <div class="title-row">General Placeholder Guidelines</div>
-          <div class="row line-row"></div>
-          <div class="discription">
-          <li>Use clear, concise placeholder text that describes the expected input format</li>
-          <li>Avoid using placeholders as labels - always provide proper field labels</li>
-          <li>Ensure placeholder text has sufficient color contrast while remaining visually distinct from actual input</li>
-          <li>Use sentence case for placeholder text to maintain consistency</li>
-          <li>Keep placeholder text short and actionable</li>
-         
+    <div class="card card-outline-secondary my-4">
+        <div class="card-header">
+            Placeholder Standards
         </div>
+        <img src="https://images.pexels.com/photos/3184433/pexels-photo-3184433.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" />
 
-         <div class="row my-3"></div>
-          <div class="title-row">Types of Placeholders</div>
-          <div class="row line-row"></div>
-          <div class="discription">
-          <b>Format Examples:</b> Show users the expected format for inputs like dates, phone numbers, or email addresses
-          <br><br>
-          <b>Instructional Placeholders:</b> Provide brief instructions on what to enter in the field
-          <br><br>
-          <b>Example Content:</b> Give users realistic examples of what they might enter
-          <br><br>
-          <b>Search Hints:</b> Guide users on how to use search functionality effectively
-         
+        <div class="container card-padding">
+            <div class="row my-2"></div>
+            
+            <div class="row my-3"></div>
+            <div class="title-row">Placeholder Standards (Product-Specific)</div>
+            <div class="row line-row"></div>
+            
+            <b>1. Text Inputs</b>
+            <ul>
+                <li>Default placeholder: “Type here”</li>
+                <li>Optional enhancement: For specific fields where a format or example is helpful, append an example after “Type here”:</li>
+                <li>Ensure placeholder text has sufficient color contrast while remaining visually distinct from actual input
+                    <ul>
+                        <li>Type here (e.g., John Doe)</li>
+                        <li>Type here (e.g., johndoe@email.com)</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <b>2. Dropdowns / Selection Inputs</b>
+            <ul>
+                <li>Default placeholder: “Select”</li>
+                <li>Optional enhancement : Add context if necessary:
+                    <ul>
+                        <li>Select department</li>
+                        <li>Select country</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <b>3. Consistency Rules</b>
+            <ul>
+                <li>Always use sentence case for placeholders:
+                    <ul>
+                        <li>Select department</li>
+                        <li>Select country</li>
+                    </ul>
+                </li>
+                <li>Avoid using placeholders as labels , labels must always be visible.</li>
+                <li>For optional fields, you can add (optional) in the label, not in the placeholder.</li>
+            </ul>
+
+            <b>4. Accessibility</b>
+            <ul>
+                <li>Ensure placeholder text is visibly distinguishable from entered text (color contrast).</li>
+                <li>Do not rely on placeholders as the only guidance.</li>
+            </ul>
+
+            <div class="row my-3"></div>
+            <div class="title-row">Types of Placeholders</div>
+            <div class="row line-row"></div>
+            
+            <b>Primary Identifier Column Click = Page Navigation / Separate Screen</b>
+            <br>Show users the expected format for inputs like dates, phone numbers, or email addresses
+            <br><br>
+            <b style="font-size: 14px;">Primary Identifier Column Click = Page Navigation / Separate Screen</b>
+            <br>In tables/lists, it is better to place the primary identifier (name, title, topic) in the first column, and make it the only clickable column for navigation. This ensures consistent ordering, easy scanning, and predictable navigation behavior
+            <br><br>
+            <b style="font-size: 14px;">How It Applies to Our Cases</b>
+            <br>Assets → Asset Name clickable (instead of ID or serial number).<br>
+            Brands → Brand Name clickable.<br>
+            Categories → Category Name clickable.<br>
+            Vendors → Vendor Name clickable.<br>
+            Documents → Document Topic/Title clickable.
+            <br><br>
+            <b style="font-size: 14px;">Benefits of Identifier-Based Standard</b>
+            <br>Future-proof -  if you reorder columns, rule still applies.<br>
+            Consistent mental model - users always know “the name/title is the link.”<br>
+            Cleaner design - avoids random multiple columns being clickable.<br>
+            Matches common web patterns - (Google Drive, Jira, GitHub - all use “name/title” as the entry point).<br>
+            <br>
+            
+            <b style="font-size: 14px;">Expected Behaviour</b>
+            <br>Clicking the identifier should always take the user to a detail view or separate screen.
+            <br>This establishes a predictable rule: identifier = go inside, view more.
+            <br><br>
+            
+            <b style="font-size: 14px;">Interaction Behavior</b>
+            <ul>
+                <li>Hover State: Show underline, link color change, or cursor pointer only on the clickable column.</li>
+                <li>Action Icons (edit/delete): Always visible or appear on hover; must be clearly separated from navigation click.</li>
+                <li>Keyboard Accessibility: Ensure clickable column is focusable (tab index).</li>
+            </ul>
+
+            <div class="row my-3"></div>
+            <div class="title-row">Standard for Lists - Row View Editing</div>
+            <div class="row line-row"></div>
+
+            
+            <ul>
+                <li>Editing must always be triggered by a dedicated icon or action (“Edit” button).</li>
+                <li>Never reuse the primary identifier click for editing (to avoid confusion).</li>
+                <li>Edit action can be:
+                    <ul>
+                        <li>Inline edit modal (quick edit), or</li>
+                        <li>Separate edit page (depending on use case).</li>
+                    </ul>
+                </li>
+                <li>But in both cases - the trigger should be an explicit action icon/button, not the identifier.</li>
+            </ul>
+
         </div>
-
-        <div class="row my-3"></div>
-          <div class="title-row">Behavior and Interaction</div>
-          <div class="row line-row"></div>
-          <div class="discription">
-          <li>Placeholder text should disappear when the user starts typing</li>
-          <li>For complex inputs, consider showing format hints below the field instead of in the placeholder</li>
-          <li>Use consistent placeholder styling across all form elements</li>
-          <li>Ensure placeholders work well with auto-fill and browser features</li>
-          <li>Test placeholder visibility across different devices and screen sizes</li>
-         
-        </div>
-
-        
-          <div class="row my-5"></div>
-        </div>
-      </div>
-      <!-- /.col-lg-9 -->
-
-          </div>
-      </div>
+    </div>
+    </div>
     </div>
   </div>     
 
