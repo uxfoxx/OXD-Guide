@@ -42,63 +42,85 @@
 
   }
 }
+.oxd-icons{
+  width: 54px;
+  height:54px;
+  fill: red;
+  color: red;
+    stroke: red;
+  fill: red;
 
-/* Adjustments for .icon-card to give more space and center content */
-.icon-card {
-  /* Override external CSS padding to reduce whitespace around the icon */
-  padding: 10px !important;
-  padding-top: 15px !important;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  /* Ensure a consistent height for all icon cards */
-  height: 130px;
-  overflow: hidden;
+    /* Make sure you define dimensions for your div otherwise it wont show u*/
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
 }
 
-/* New wrapper for the SVG to create a fixed viewport with cropping */
-.svg-viewport {
-  width: 80px; /* Define the fixed width of the visible SVG area */
-  height: 80px; /* Define the fixed height of the visible SVG area */
-  overflow: hidden; /* This is the key property for cropping */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 10px; /* Space between the icon and its label */
-  /* Optional: add a border to visualize this wrapper during development */
-  /* border: 1px solid rgba(0, 0, 255, 0.3); */
+
+.icon-card
+{
+  padding-left: 36px;
 }
 
-/* Modify the .oxd-icons class to scale the SVG within its new wrapper */
-.oxd-icons {
-  /* Scale the SVG larger than its wrapper to effectively "zoom in" and crop */
-  width: 150% !important; /* Adjust this percentage to control the zoom level */
-  height: 150% !important; /* Keep this the same as the width percentage to maintain aspect ratio */
-  /* Remove fixed pixel dimensions that might conflict */
-  max-width: none;
-  max-height: none;
-  object-fit: cover; /* Ensures the SVG covers the wrapper while maintaining aspect ratio */
+/* Override icon card column layout for 6 per row */
+.icon-card-col {
+  width: 16.666667%; /* 6 per row */
+  float: left;
+  padding: 5px;
 }
 
-/* Adjustments for the paragraph text within icon-card */
-.icon-card p {
-  margin-bottom: 0 !important;
-  font-size: 12px;
-  font-weight: 600;
-  color: #64728c;
-  line-height: 1.2;
+@media (max-width: 1200px) {
+  .icon-card-col {
+    width: 20%; /* 5 per row */
+  }
+}
+
+@media (max-width: 992px) {
+  .icon-card-col {
+    width: 25%; /* 4 per row */
+  }
+}
+
+@media (max-width: 768px) {
+  .icon-card-col {
+    width: 33.333333%; /* 3 per row */
+  }
+}
+
+@media (max-width: 576px) {
+  .icon-card-col {
+    width: 50%; /* 2 per row */
+  }
+}
+
+@media (max-width: 400px) {
+  .icon-card-col {
+    width: 100%; /* 1 per row */
+  }
 }
 
 </style>
 </head>
 
-<body>
+<body ><!-- onload="myFunction()" -->
+<!-- <div style="width: 100%; height:100%; z-index: 100000; position: absolute; width: 100%; height: 100%; background-color: #fff; margin-top: -60px;" id="loader">
+  
+        <div style="width: 80px; height: 100px; top:50%; left:50%; position: absolute;transform: translate(-50%, -50%); ">
+       <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 600 600">
 
+        <path class=" path" stroke="#64728c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="1000" stroke-dashoffset="1000" fill="none" d="M122.44,95.63c3.45-1.3,6.55-2.13,9.62-3,7-2.11,14-1.85,21.09-.32A68.39,68.39,0,0,1,180.72,105c8.7,6.69,14.34,15.5,17.58,25.9,6.42,20.66,1.91,45.49-12.25,62-13.32,15.53-30,24.87-50.4,27.47-17.57,2.23-34-1.37-49.53-9.71A77.26,77.26,0,0,1,58,185.26c-6.49-9.71-10.75-20.28-11.83-31.95-1.49-16.2,3.41-30.32,14.22-42.42a50.59,50.59,0,0,1,11.72-9.76,33.34,33.34,0,0,1,24.76-4.26c9.15,1.9,17.61,5.26,25,11.09,5.38,4.26,9.53,9.44,11.4,16.19a25.74,25.74,0,0,1,.6,2.74c.08.49.29,1.15-.45,1.36s-1.45.47-2-.26c-.46-.57-.89-1.18-1.37-1.73a47.88,47.88,0,0,0-31.31-16.48,33.48,33.48,0,0,0-9.22.21,19.68,19.68,0,0,0-11.07,5.78c-8.47,8.54-13.27,18.69-12.49,30.92.55,8.54,3.88,16.15,9,22.93a61.05,61.05,0,0,0,32.93,22.27c16.69,4.74,33,3.55,48.52-4.37,8-4.07,14.69-9.62,19.19-17.55a52.05,52.05,0,0,0,6.29-19,60.53,60.53,0,0,0,.11-15.45A31.11,31.11,0,0,0,175,119.89a55.3,55.3,0,0,0-22.77-16.79c-7.29-3-15-4.68-22.69-6.11C127.34,96.58,125.12,96.15,122.44,95.63Z" transform="translate(-45.89 -34.52)"/>
+
+        <path class=" path" stroke="#64728c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-dasharray="1000" stroke-dashoffset="1000" fill="none"  d="M168,46.51A227,227,0,0,0,139,61.24a140.77,140.77,0,0,0-20.05,14.15c-1.26,1.09-2.49,2.21-3.94,3.5a15.68,15.68,0,0,1,0-4.27,51.28,51.28,0,0,1,4.33-17.69,29.4,29.4,0,0,1,16.48-15.68,97.77,97.77,0,0,1,25.57-6,132.65,132.65,0,0,1,18.9-.64,75.37,75.37,0,0,1,10.33.88,1,1,0,0,1,0,1c-5.79,12-12,23.72-20,34.42-1,1.29-2,2.53-3,3.77A25.9,25.9,0,0,1,155.19,83a116.28,116.28,0,0,1-19.84,4.25c-3.18.42-6.38.77-9.58,1.16a4,4,0,0,1-1.68,0A5.86,5.86,0,0,1,125.27,86c4-6.59,9.27-12.15,14.92-17.35,8.27-7.62,17.4-14.13,26.67-20.44.55-.38,1.09-.78,1.64-1.18a1.7,1.7,0,0,0,1.28-1.2A2.29,2.29,0,0,0,168,46.51Z" transform="translate(-45.89 -34.52)"/>
+
+
+</svg>
+<a>Loading</a>
+</div> -->
+
+</div>
 <div id="myDiv">
   <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg fixed-top">
+  <nav class="navbar navbar-expand-lg   fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#"><div class="orange-logo"><img src="../img/logo.png" width="100%"></div>
         <span class="title-o">Orange eXperience Design </span> </a>
@@ -127,7 +149,7 @@
 
       <div class="col-lg-2">
         <h1 class="my-5"><span style="font-size: 50px;">Design</span> <br><span>Guide </span> </h1>
-        <div class="list-group">
+           <div class="list-group">
          
           <a href="../index.html" class="list-group-item">OXD Introduction </a>
           <a href="../main-catalog/design.html" class="list-group-item">Design Thinking</a>
@@ -141,14 +163,14 @@
           <a href="#" class="list-group-item dropdown-btn">Visual Design</a>
               <div class="dropdown-container sub-item" style="display: block;">            
                 <a href="../design-catalog/color.html">Colors</a>
-                <a href="../design-catalog/typo.html">Typography</a>
+                <a href="../design-catalog/typo.html"  >Typography</a>
                 <a href="../design-catalog/images.html">Images</a>
-                <a href="custom-icons.html" class="sub-item active">Icons</a>
+                <a href="custom-icons.html" class=" sub-item active">Icons</a>
                 <a href="../design-catalog/motion.html">Motion Animations</a>
               </div>
           
           <a href="#" class="list-group-item dropdown-btn" >Grid & Layouts</a>
-          <div class="dropdown-container sub-item" >            
+          <div class="dropdown-container sub-item active" >            
                 <a href="../main-catalog/layout.html" class=" sub-item ">Main Layouts</a>
                 <a href="../main-catalog/grid.html" >Grid System</a>
               </div>
@@ -157,6 +179,7 @@
                 <a href="../main-catalog/side-bar.html"  >Sidebar</a>
                 <a href="../main-catalog/topbar.html">Topbar</a>
                 <a href="../main-catalog/stepper.html">Stepper</a>
+
               </div>
           <a href="../main-catalog/componets.html" class="list-group-item dropdown-btn">Components</a>
            <div class="dropdown-container sub-item ">            
@@ -169,24 +192,24 @@
                 <a href="search-box.html">Search-box</a>
                 <a href="mutiselect.html">Multi Select</a>
                 <a href="dropdown.html">Dropdown</a>
-                <a href="number-input.html">Plus Minus Input</a>
-                <a href="nested-dropdown.html">Nested Dropdown</a>
+                <a href="number-dropdwon.html">Number Dropdown</a>
                 <a href="upload-input.html">Upload Inputs</a>
+                <a href="upload-inputbox.html">Upload input box</a>
                 <a href="date-picker.html">Date picker</a>
                 <a href="time-picker.html">Time picker</a>
+                <a href="color-picker.html">Color picker</a>
                 <a href="lable.html">Labels</a>
                 <a href="help-lable.html">Help Labels</a>
                 <a href="status-lable.html">Status labels</a>
                 <a href="group-input.html">Group Input</a>
                 <a href="group-overlay.html">Group Overlay</a>
                 <a href="scroll-bar.html">Scroll-bar</a>
+                <a href="count-slider.html">Count Slider</a>
+                <a href="text-aria.html">Text-area</a>
                 <a href="comment-box.html">Comment-box</a>
                 <a href="pagination.html">Paginations</a>
+                <a href="card-loader.html">Card loader</a>
                 <a href="divider.html">Divider</a>
-                <a href="segments.html">Segments</a>
-                <a href="infinity-dropdown.html">Infinity Dropdown</a>
-                <a href="autocomplete.html">Autocomplete</a>
-                <a href="daypicker.html">Day picker</a>
            </div>
       <!--<a href="Widgets.html" class="list-group-item">Widgets</a> -->
           <a href="../main-catalog/table-list.html" class="list-group-item ">Tables & List View</a>
@@ -198,8 +221,7 @@
           <a href="../main-catalog/charts.html" class="list-group-item ">Charts</a>
           <hr>
           <a href="../main-catalog/qa.html" class="list-group-item active"><div class="img-icon"><img src="../img/behaviours.png"></div> UI Behaviours</a>
-          
-          <a href="../main-catalog/placeholder.html" class="list-group-item active"><div class="img-icon"><img src="../img/uis.png"></div>UI Standards</a>
+          <a href="../main-catalog/developer.html" class="list-group-item active"><div class="img-icon"><img src="../img/dev.png"></div> QA Standards</a>
       
          
       </div>
@@ -207,448 +229,801 @@
 
     </div>
 
+
       <div class="col-lg-10">
 
-        <div class="card card-outline-secondary my-4">
-          <div class="card-header">
-            Custom Icons
-          </div>
-          <img src="../img/placeholder.png" alt="Custom Icons Banner" />
-
-          <div class="container" style="padding-left: 25px; padding-right: 25px;">
-            <div class="row my-2"></div>
-            <div class="discription">
-              Custom icon collection with improved sizing and cropping to eliminate unwanted whitespace around SVG graphics.
-            </div>
-
-            <div class="row my-3"></div>
-            <div class="title-row">System Icons</div><hr>
-            
-            <!-- Icon Grid with SVG Viewport Containers -->
-            <div class="row">
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/datepicker.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Date Picker</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/question.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Question</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/right-arrow.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Right Arrow</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/single.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Single</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/speech-bubble.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Speech Bubble</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/pdf-file.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>PDF File</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/like.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Like</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/pencil.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Pencil</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/plus.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Plus</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/docs.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Docs</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/download.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Download</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/alert.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Alert</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/copy.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Copy</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/expand.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Expand</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/setting.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Settings</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row my-3"></div>
-            <div class="title-row">Navigation Icons</div><hr>
-            
-            <div class="row">
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/home_icon.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Home</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/edit.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Edit</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/bin.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Delete</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/login.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Login</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/logout.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Logout</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row my-3"></div>
-            <div class="title-row">Module Icons</div><hr>
-            
-            <div class="row">
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <img src="../img/icons/menu_attendance.svg" alt="Attendance" class="oxd-icons"/>
-                  </div>
-                  <p>Attendance</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/menu_onboarding.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Onboarding</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/menu_performane_icon.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Performance</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/menu_recruitment.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Recruitment</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/menuemployeema.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Employee Management</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/menu_travel.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Travel</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/menu_career_development.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Career Development</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <img src="../img/icons/menu_training.png" alt="Training" class="oxd-icons"/>
-                  </div>
-                  <p>Training</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/filter.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Filter</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-              
-              <div class="icon-card-col">
-                <div class="card icon-card">
-                  <div class="svg-viewport">
-                    <object type="image/svg+xml" data="../img/icons/help.svg" class="oxd-icons"></object>
-                  </div>
-                  <p>Help</p>
-                  <div class="icon-overlay">
-                    <button class="download-btn">SVG</button>
-                    <button class="download-btn png-btn">PNG</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="row my-3"></div>
-            <div class="title-row">Usage Guidelines</div>
-            <div class="discription">
-              <p><strong>Icon Sizing:</strong> Default size is 12px for buttons and general system icons. You can also use 14px depending on the icon's optical view and context.</p>
-              <p><strong>Download Options:</strong> Hover over any icon to reveal download options for both SVG and PNG formats.</p>
-              <p><strong>Customization:</strong> The SVG viewport technique allows for better control over icon appearance by cropping unnecessary whitespace while maintaining visual clarity.</p>
-            </div>
-
-            <div class="row my-5"></div>
+       <!--  <div class="card mt-5" style="min-height: 200px;">
+    
+        </div> -->
+        <div class="my-4"></div>
+        <div class="title-row">PIM Icons</div><hr>
+        
+        <!-- Personal Information Group -->
+        <div class="row my-3">
+          <div class="col-12">
+            <h5 style="color: #64728c; font-weight: 600; margin-bottom: 15px;">Personal Information</h5>
           </div>
         </div>
+        <div class="row">
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/contact-new-c.svg" alt="oxd"/>
+               <p>Contact details</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/contact-new-c.svg', 'contact-details')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/contact-new-c.svg', 'contact-details')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/personal-info.svg" alt="oxd"/>
+               <p>Personal info</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/personal-info.svg', 'personal-info')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/personal-info.svg', 'personal-info')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/dependents.svg" alt="oxd"/>
+               <p>Dependents</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/dependents.svg', 'dependents')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/dependents.svg', 'dependents')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/emergency.svg" alt="oxd"/>
+               <p>Emergency</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/emergency.svg', 'emergency')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/emergency.svg', 'emergency')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/Immigration.svg" alt="oxd"/>
+               <p>Immigration</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/Immigration.svg', 'immigration')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/Immigration.svg', 'immigration')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/membership.svg" alt="oxd"/>
+               <p>Membership</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/membership.svg', 'membership')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/membership.svg', 'membership')">PNG</button>
+               </div>
+            </div>
+          </div> 
+        </div>
+
+        <!-- Job & Work Information Group -->
+        <div class="row my-3">
+          <div class="col-12">
+            <h5 style="color: #64728c; font-weight: 600; margin-bottom: 15px;">Job & Work Information</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/job.svg" alt="oxd"/>
+               <p>Job</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/job.svg', 'job')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/job.svg', 'job')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/report-to.svg" alt="oxd"/>
+               <p>Report to</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/report-to.svg', 'report-to')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/report-to.svg', 'report-to')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/work-week.svg" alt="oxd"/>
+               <p>Work week</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/work-week.svg', 'work-week')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/work-week.svg', 'work-week')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/qualifications.svg" alt="oxd"/>
+               <p>Qualifications</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/qualifications.svg', 'qualifications')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/qualifications.svg', 'qualifications')">PNG</button>
+               </div>
+            </div>
+          </div> 
+        </div>
+
+        <!-- Financial Information Group -->
+        <div class="row my-3">
+          <div class="col-12">
+            <h5 style="color: #64728c; font-weight: 600; margin-bottom: 15px;">Financial Information</h5>
+          </div>
+        </div>
+        <div class="row">
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/salary.svg" alt="oxd"/>
+               <p>Salary</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/salary.svg', 'salary')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/salary.svg', 'salary')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/direct-deposit.svg" alt="oxd"/>
+               <p>Direct deposit</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/direct-deposit.svg', 'direct-deposit')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/direct-deposit.svg', 'direct-deposit')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/pim/tax.svg" alt="oxd"/>
+               <p>Tax</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/pim/tax.svg', 'tax')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pim/tax.svg', 'tax')">PNG</button>
+               </div>
+            </div>
+          </div> 
+        </div>
+
+        <div class="row my-3"></div>
+        <div class="title-row">OXD System Icons</div><hr>
+
+        <!-- /.card -->
+        <div class="row">
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/datepicker.svg" class="oxd-icons"></object>
+               <p>Date picker</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/datepicker.svg', 'datepicker')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/datepicker.svg', 'datepicker')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/question.svg" class="oxd-icons"></object>
+              
+                 <p>Question</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/question.svg', 'question')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/question.svg', 'question')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/right-arrow.svg" class="oxd-icons"></object>
+                
+                 <p>Right arrow</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/right-arrow.svg', 'right-arrow')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/right-arrow.svg', 'right-arrow')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/single.svg" class="oxd-icons"></object>
+              
+                 <p>Single</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/single.svg', 'single')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/single.svg', 'single')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/speech-bubble.svg" class="oxd-icons"></object>
+                
+                 <p>Speech bubble</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/speech-bubble.svg', 'speech-bubble')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/speech-bubble.svg', 'speech-bubble')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/pdf-file.svg" class="oxd-icons"></object>
+               
+                 <p>PDF file</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/pdf-file.svg', 'pdf-file')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pdf-file.svg', 'pdf-file')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+        </div>
+
+         <div class="row my-3"></div>
+
+        <!-- /.card -->
+        <div class="row">
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/like.svg" class="oxd-icons"></object>
+              
+               <p>Like</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/like.svg', 'like')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/like.svg', 'like')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/pencil.svg" class="oxd-icons"></object>
+               
+                 <p>Pencil</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/pencil.svg', 'pencil')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/pencil.svg', 'pencil')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/plus.svg" class="oxd-icons"></object>
+                
+                 <p>Plus</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/plus.svg', 'plus')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/plus.svg', 'plus')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/docs.svg" class="oxd-icons"></object>
+               
+                 <p>Docs</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/docs.svg', 'docs')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/docs.svg', 'docs')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/download.svg" class="oxd-icons"></object>
+              
+                 <p>Download</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/download.svg', 'download')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/download.svg', 'download')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/alert.svg" class="oxd-icons"></object>
+              
+                 <p>Alert</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/alert.svg', 'alert')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/alert.svg', 'alert')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+        </div>
+
+            <div class="row my-3"></div>
+
+        <!-- /.card -->
+        <div class="row">
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/copy.svg" class="oxd-icons"></object>
+         
+               <p>Copy</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/copy.svg', 'copy')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/copy.svg', 'copy')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/expand.svg" class="oxd-icons"></object>
+              
+                 <p>Expand</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/expand.svg', 'expand')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/expand.svg', 'expand')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/my report.svg" class="oxd-icons"></object>
+                
+                 <p>My Report</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/my report.svg', 'my-report')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/my report.svg', 'my-report')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/allreport.svg" class="oxd-icons"></object>
+             
+                 <p>All Report</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/allreport.svg', 'all-report')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/allreport.svg', 'all-report')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/setting.svg" class="oxd-icons"></object>
+             
+                 <p>Setting</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/setting.svg', 'setting')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/setting.svg', 'setting')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/downarrow.svg" class="oxd-icons"></object>
+           
+                 <p>Down Arrow</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/downarrow.svg', 'down-arrow')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/downarrow.svg', 'down-arrow')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+        </div>
+
+
+
+        <div class="row my-3"></div>
+
+        <!-- /.card -->
+        <div class="row">
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <object type="image/svg+xml" data="../img/icons/defultfolder.svg" class="oxd-icons"></object>
+             
+               <p>Default folder</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/defultfolder.svg', 'default-folder')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/defultfolder.svg', 'default-folder')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <object type="image/svg+xml" data="../img/icons/briefcase.svg" class="oxd-icons"></object>
+               
+                 <p>Briefcase</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/briefcase.svg', 'briefcase')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/briefcase.svg', 'briefcase')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <object type="image/svg+xml" data="../img/icons/goal.svg" class="oxd-icons"></object>
+             
+                 <p>Goal</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/goal.svg', 'goal')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/goal.svg', 'goal')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <object type="image/svg+xml" data="../img/icons/myshortcuts.svg" class="oxd-icons"></object>
+               
+                 <p>Shortcuts</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/myshortcuts.svg', 'shortcuts')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/myshortcuts.svg', 'shortcuts')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <object type="image/svg+xml" data="../img/icons/filter.svg" class="oxd-icons"></object>
+             
+                 <p>Filter</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/filter.svg', 'filter')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/filter.svg', 'filter')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <object type="image/svg+xml" data="../img/icons/help.svg" class="oxd-icons"></object>
+               
+                 <p>Help</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/help.svg', 'help')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/help.svg', 'help')">PNG</button>
+                 </div>
+            </div>
+          </div>
+      
+        </div>
+
+        
+        <div class="row my-3"></div>
+
+        <!-- /.card -->
+        <div class="row">
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/home_icon.svg" class="oxd-icons"></object>
+          
+               <p>Home</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/home_icon.svg', 'home')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/home_icon.svg', 'home')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/edit.svg" class="oxd-icons"></object>
+          
+                 <p>Edit</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/edit.svg', 'edit')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/edit.svg', 'edit')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/bin.svg" class="oxd-icons"></object>
+            
+                 <p>Delete</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/bin.svg', 'delete')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/bin.svg', 'delete')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/login.svg" class="oxd-icons"></object>
+            
+                 <p>Login</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/login.svg', 'login')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/login.svg', 'login')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/logout.svg" class="oxd-icons"></object>
+              
+                 <p>Logout</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/logout.svg', 'logout')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/logout.svg', 'logout')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/addfolder.svg" class="oxd-icons"></object>
+              
+                 <p>Add folder</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/addfolder.svg', 'add-folder')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/addfolder.svg', 'add-folder')">PNG</button>
+                 </div>
+            </div>
+          </div>
+      
+        </div>
+
+          <div class="row my-3"></div>
+
+        <!-- /.card -->
+        <div class="row">
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/upload-application.svg" class="oxd-icons"></object>
+          
+               <p>Upload application</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/upload-application.svg', 'upload-application')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/upload-application.svg', 'upload-application')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/download-application.svg" class="oxd-icons"></object>
+          
+                 <p>Download app</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/download-application.svg', 'download-app')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/download-application.svg', 'download-app')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/attachment.svg" class="oxd-icons"></object>
+            
+                 <p>Attachment</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/attachment.svg', 'attachment')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/attachment.svg', 'attachment')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/next-user.svg" class="oxd-icons"></object>
+            
+                 <p>Next User</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/next-user.svg', 'next-user')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/next-user.svg', 'next-user')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/switch-person.svg" class="oxd-icons"></object>
+              
+                 <p>Switch Person</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/switch-person.svg', 'switch-person')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/switch-person.svg', 'switch-person')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/recent-report.svg" class="oxd-icons"></object>
+              
+                 <p>Recent Report</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/recent-report.svg', 'recent-report')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/recent-report.svg', 'recent-report')">PNG</button>
+                 </div>
+            </div>
+          </div>
+      
+        </div>
+                  <div class="row my-3"></div>
+
+        <!-- /.card -->
+        <div class="row">
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/calender-feed.svg" class="oxd-icons"></object>
+          
+               <p>Calendar Feed</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/calender-feed.svg', 'calendar-feed')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/calender-feed.svg', 'calendar-feed')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/expire-date.svg" class="oxd-icons"></object>
+          
+                 <p>Expire Date/time</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/expire-date.svg', 'expire-date')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/expire-date.svg', 'expire-date')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/deccending-time.svg" class="oxd-icons"></object>
+            
+                 <p>Descending Time</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/deccending-time.svg', 'descending-time')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/deccending-time.svg', 'descending-time')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/acceding-time.svg" class="oxd-icons"></object>
+            
+                 <p>Ascending Time</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/acceding-time.svg', 'ascending-time')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/acceding-time.svg', 'ascending-time')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/multi-user.svg" class="oxd-icons"></object>
+              
+                 <p>Multi User</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/multi-user.svg', 'multi-user')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/multi-user.svg', 'multi-user')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+              <object type="image/svg+xml" data="../img/icons/arrow-up.svg" class="oxd-icons"></object>
+              
+                 <p>Arrow Up</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/arrow-up.svg', 'arrow-up')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/arrow-up.svg', 'arrow-up')">PNG</button>
+                 </div>
+            </div>
+          </div>
+      
+        </div>
+
+        <div class="row my-3"></div>
+        <div class="title-row">OXD Module Icons </div><hr>
+        <!-- /.card -->
+        <div class="row">
+          <div class="icon-card-col">
+            <div class="card icon-card">
+                <object type="image/svg+xml" data="../img/icons/menu_onboarding.svg" class="oxd-icons"></object>
+              
+               <p>Menu onboarding</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/menu_onboarding.svg', 'menu-onboarding')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/menu_onboarding.svg', 'menu-onboarding')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+                   <object type="image/svg+xml" data="../img/icons/menu_performane_icon.svg" class="oxd-icons"></object>
+               
+                 <p>Menu performance</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/menu_performane_icon.svg', 'menu-performance')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/menu_performane_icon.svg', 'menu-performance')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+                   <object type="image/svg+xml" data="../img/icons/menu_recruitment.svg" class="oxd-icons"></object>
+              
+                 <p>Menu recruitment</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/menu_recruitment.svg', 'menu-recruitment')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/menu_recruitment.svg', 'menu-recruitment')">PNG</button>
+                 </div>
+            </div>
+          </div>
+          <div class="icon-card-col">
+            <div class="card icon-card">
+                   <object type="image/svg+xml" data="../img/icons/menuemployeema.svg" class="oxd-icons"></object>
+              
+                 <p>Menu employee MA</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/menuemployeema.svg', 'menu-employee-ma')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/menuemployeema.svg', 'menu-employee-ma')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+                   <object type="image/svg+xml" data="../img/icons/menu_travel.svg" class="oxd-icons"></object>
+              
+                 <p>Menu travel</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/menu_travel.svg', 'menu-travel')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/menu_travel.svg', 'menu-travel')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+                   <object type="image/svg+xml" data="../img/icons/menu_career_development.svg" class="oxd-icons"></object>
+              
+                 <p>Menu career dev</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadSVG('../img/icons/menu_career_development.svg', 'menu-career-dev')">SVG</button>
+                   <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/menu_career_development.svg', 'menu-career-dev')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+        </div>
+
+
+        <div class="row my-3"></div>
+        
+        <!-- /.card -->
+         <div class="row">
+          <div class="icon-card-col">
+            <div class="card icon-card">
+               <img src="../img/icons/menu_attendance.svg" alt="oxd"/>
+               <p>Menu attendance</p>
+               <div class="icon-overlay">
+                 <button class="download-btn" onclick="downloadSVG('../img/icons/menu_attendance.svg', 'menu-attendance')">SVG</button>
+                 <button class="download-btn png-btn" onclick="downloadPNG('../img/icons/menu_attendance.svg', 'menu-attendance')">PNG</button>
+               </div>
+            </div>
+          </div> 
+          <div class="icon-card-col">
+            <div class="card icon-card">
+                <img src="../img/icons/menu_training.png" alt="oxd"/>
+                 <p>Menu training</p>
+                 <div class="icon-overlay">
+                   <button class="download-btn" onclick="downloadPNG('../img/icons/menu_training.png', 'menu-training')">PNG</button>
+                 </div>
+            </div>
+          </div> 
+        </div>
+        
+        <div class="row my-3"></div>
+        <div class="title-row">Sizing </div><hr>
+        <!-- /.card -->
+        <div class="discription">
+          Depending on icon visual size, icons have been designed to work best in these sizes <br>
+          Default size will be <b>12px</b> for button and general system icons, but
+          also can use <b>12px</b> and <b>14px</b> depending on the icon optical view
+
+         </div>
+
+ 
+
+
+       
+          <div class="row my-5"></div>
       </div>
       <!-- /.col-lg-9 -->
 
     </div>
-  </div>
+</div>
+
 
   <!-- /.container -->
 
@@ -674,6 +1049,27 @@
       function showPage() {
         document.getElementById("loader").style.display = "none";
         document.getElementById("myDiv").style.display = "block";
+      }
+
+      // Download functions for icons
+      function downloadSVG(url, filename) {
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename + '.svg';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+
+      function downloadPNG(url, filename) {
+        // For PNG conversion, we'd need to convert SVG to PNG
+        // This is a simplified version - in a real implementation you'd convert the SVG
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename + '.png';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
       }
 </script>
 <script>
